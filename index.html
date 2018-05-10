@@ -1,15 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<!--styles-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css" />
+	<title>NYU Stern School of Business - Rooms</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <button id="btn">Click me</button>
-    </div>
-    <script src="index.js"></script>
+	<div class="h-100 container-fluid">
+		<header>
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id = "navigationMenu">
+				<a class="navbar-brand" href="#mapView">NYU</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="#mapView">Mapa</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#comparationView">Comparaciones</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#downloadsView">Descargas</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<div class = "paddingNavBar" id = "navBarSpacing"></div>
+
+		<div class="row customRow" id = "mapView">
+			<div class="col-sm-4 customCol">
+				<div class="card configMapSidebar">
+					<div class="card-header">
+						<ul class="nav nav-tabs card-header-tabs" role = "tablist">
+							<li class="nav-item">
+								<a class="nav-link active" id = "map-settings-tab" data-toggle = "tab"
+								href = "#settings-tab">Opciones</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id = "map-advanced-tab" data-toggle = "tab"
+								href = "#advanced-tab">Avanzado</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" id = "map-selected-tab" data-toggle = "tab"
+								href = "#selected-tab">Seleccion</a>
+							</li>
+						</ul>
+					</div>
+					<div class="card-body">
+						<div class = "tab-content" id = "contents-map">
+							<div class = "tab-pane show active" id = "settings-tab">
+								<h3>Loacion:</h3>
+								<label for = "location-map">Borough</label>
+								<select class="form-control form-control-sm" id = "location-map">
+									<option value = "0">Seleccione...</option>
+								</select>
+								<label for = "location-com-map">District</label>
+								<select class="form-control form-control-sm" id = "location-com-map" disabled="">
+									<option value = "0">Seleccione...</option>
+								</select>
+							</div>
+							<div class = "tab-pane show" id = "advanced-tab">
+								In development
+							</div>
+							<div class = "tab-pane show" id = "selected-tab">
+								In development
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="row customRow">
+					<div class="col-sm-12 customCol-70">
+						<div class="rounded" id="mapContainer"></div>
+						<div class="card-group" id="bottomMap">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Graph_01</h5>
+									<p class="card-text">Graph 01</p>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Graph_02</h5>
+									<p class="card-text">Graph 02</p>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Graph_03</h5>
+									<p class="card-text">Graph 03</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div class="row customRow" id = "comparationView">
+		</div>
+
+		<hr/>
+
+		<div class="row customRow" id = "downloadsView">
+		</div>
+	</div>
+
+	<!--scripts from bootrstap page, in order to use button properties, animations, etc from bootstrap-->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!--Maps Api and personal custom scripts-->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMHFzrYVjHSWLl_bmaaLLraqi05CCnP_A&callback=onGoogleMapResponse" type="text/javascript"></script>
+	<script src="index.js"></script>
+
 </body>
+
 </html>
